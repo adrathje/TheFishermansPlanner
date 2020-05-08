@@ -24,3 +24,14 @@ Results::Results(int numFish, bool success, bool fault)
     this->success = success;
     this->myFault = fault;
 }
+
+/**
+ * returns a QString of the results info
+ * @brief Results::toString
+ * @return
+ */
+QString Results::toString(){
+    return "Number of fish worth keeping: " + QString::number(getNumberOfFishWorthKeeping()) +
+            " | Success: " + QVariant(getSuccess()).toString() + " | My fault: " + QVariant(getMyFault()).toString();
+}
+

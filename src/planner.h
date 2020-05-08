@@ -9,81 +9,81 @@
 #include "results.h"
 #include <iostream>
 #include <vector>
+#include <QString>
 
 using namespace std;
 
 class Planner
 {
 private:
-    string name = "";
-    vector<Fish> fishList;
-    vector<Location> locationList;
-    Weather fishingWeather;
-    Equipment equipmentToBring;
-    Boat boatBeingUsed;
-    Results results;
+    long plannerId = 0;
+    QString name = "";
+    QString fish = "";
+    QString location = "";
+    QString fishingWeather;
+    QString equipmentToBring;
+    QString boatBeingUsed = "No boat was used.";
+    QString results = "None have been submitted yet.";
 public:
     // constructors
     Planner();
-    Planner(string name, Weather fishingWeather, Equipment equipmentToBring);
-    Planner(string name, Weather fishingWeather, Equipment equipmentToBring, Boat boatBeingUsed);
+    Planner(QString name, QString fishingWeather, QString equipmentToBring);
+    Planner(QString name, QString fishingWeather, QString equipmentToBring, QString boatBeingUsed);
 
     // methods
-    int getFishListSize(){
-        return fishList.size();
-    };
-    int getLocationListSize(){
-        return locationList.size();
-    };
+    QString toString();
 
     // getters
-    string getName() const{
+    long getPlannerId() const {
+        return plannerId;
+    }
+    QString getName() const{
         return name;
     };
-    vector<Fish> getFishList() const{
-        return fishList;
+    QString getFish() const{
+        return fish;
     };
-    vector<Location> getLocationList() const {
-        return locationList;
+    QString getLocation() const {
+        return location;
     };
-    Weather getFishingWeather() const {
+    QString getFishingWeather() const {
         return fishingWeather;
     };
-    Equipment getEquipmentToBring() const {
+    QString getEquipmentToBring() const {
         return equipmentToBring;
     };
-    Boat getBoatBeingUsed() const {
+    QString getBoatBeingUsed() const {
         return boatBeingUsed;
     };
-    Results getResults() const {
+    QString getResults() const {
         return results;
     };
 
     // setters
-    void setName(string name) {
+    void setPlannerId(long id) {
+        this->plannerId = id;
+    }
+    void setName(QString name) {
         this->name = name;
     };
-    void setFishList(vector<Fish> fishList) {
-        this->fishList = fishList;
+    void setFish(QString fish) {
+        this->fish = fish;
     };
-    void setLocationList(vector<Location> locationList) {
-        this->locationList = locationList;
+    void setLocation(QString location) {
+        this->location = location;
     };
-    void setFishingWeather(Weather fishingWeather) {
+    void setFishingWeather(QString fishingWeather) {
         this->fishingWeather = fishingWeather;
     };
-    void setEquipmentToBring(Equipment equipmentToBring) {
+    void setEquipmentToBring(QString equipmentToBring) {
         this->equipmentToBring = equipmentToBring;
     };
-    void setBoatBeingUsed(Boat boatBeingUsed) {
+    void setBoatBeingUsed(QString boatBeingUsed) {
         this->boatBeingUsed = boatBeingUsed;
     };
-    void setResults(Results results) {
+    void setResults(QString results) {
         this->results = results;
     };
-
-
-
 };
 
 #endif // PLANNER_H

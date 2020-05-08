@@ -22,6 +22,7 @@ SOURCES += \
         location.cpp \
         planner.cpp \
         plannerProgram.cpp \
+        plannercli.cpp \
         results.cpp \
         weather.cpp
 
@@ -36,5 +37,6 @@ HEADERS += \
     fish.h \
     location.h \
     planner.h \
+    plannercli.h \
     results.h \
     weather.h

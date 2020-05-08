@@ -1,37 +1,40 @@
 #ifndef FISH_H
 #define FISH_H
 
-#include <string>
+#include <QString>
 using namespace std;
 
 class Fish
 {
 private:
     int limitNumber;
-    int minSizeRequirement;
-    string species;
+    double minSizeRequirement;
+    QString species;
 public:
     // constructors
     Fish();
-    Fish(int limNum, int minSizeReq, string spec);
+    Fish(int limNum, double minSizeReq, QString spec);
+
+    // methods
+    QString toString();
 
     //getters and setters
     int getLimitNumber() const {
         return limitNumber;
     };
-    int getMinSizeRequirement() const {
+    double getMinSizeRequirement() const {
         return minSizeRequirement;
     };
-    string getSpecies() const {
+    QString getSpecies() const {
         return species;
     };
     void setLimitNumber(int limitNumber) {
         this->limitNumber = limitNumber;
     };
-    void setMinSizeRequirement(int minSizeRequirement) {
+    void setMinSizeRequirement(double minSizeRequirement) {
         this->minSizeRequirement = minSizeRequirement;
     };
-    void setSpecies(string species) {
+    void setSpecies(QString species) {
         this->species = species;
     };
 };

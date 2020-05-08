@@ -1,41 +1,44 @@
 #ifndef BOAT_H
 #define BOAT_H
 
-#include <string>
+#include <QString>
 using namespace std;
 
 class Boat
 {
 private:
-    string type;
+    QString type;
     double length;
-    bool electric;
+    QString electric;
     int capacity;
 public:
     // constructores
     Boat();
-    Boat(string type, double length, bool electric, int capacity);
+    Boat(QString type, double length, QString electric, int capacity);
+
+    // methods
+    QString toString();
 
     // getters and setters
-    string getType() const {
+    QString getType() const {
         return type;
     };
     double getLength() const{
         return length;
     };
-    bool getElectric(){
+    QString getElectric(){
         return electric;
     };
     int getCapacity(){
         return capacity;
     };
-    void setType(string type){
+    void setType(QString type){
         this->type = type;
     };
     void setLength(double length){
         this->length = length;
     };
-    void setElectric(bool electric){
+    void setElectric(QString electric){
         this->electric = electric;
     };
     void setCapacity(int capacity){

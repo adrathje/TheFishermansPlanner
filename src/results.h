@@ -1,7 +1,8 @@
 #ifndef RESULTS_H
 #define RESULTS_H
 
-#include <string>
+#include <QString>
+#include <QVariant>
 using namespace std;
 
 class Results
@@ -14,6 +15,9 @@ public:
     // constructors
     Results();
     Results(int numFish, bool success, bool fault);
+
+    // methods
+    QString toString();
 
     // getters and setters
     int getNumberOfFishWorthKeeping() const {

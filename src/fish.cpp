@@ -18,9 +18,18 @@ Fish::Fish()
  * @param minSizeReq
  * @param spec
  */
-Fish::Fish(int limNum, int minSizeReq, string spec)
+Fish::Fish(int limNum, double minSizeReq, QString spec)
 {
     this->limitNumber = limNum;
     this->minSizeRequirement = minSizeReq;
     this->species = spec;
+}
+
+/**
+ * returns a QString of the fish info
+ * @brief Fish::toString
+ * @return
+ */
+QString Fish::toString(){
+    return "Fish limit number: " + QString::number(getLimitNumber()) + " | Minimum length requirement: " + QString::number(getMinSizeRequirement()) + " inches | Species: " + getSpecies();
 }

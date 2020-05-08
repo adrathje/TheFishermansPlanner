@@ -7,7 +7,7 @@
 Location::Location()
 {
     this->bodyOfWater = "";
-    this->gps = "";
+    this->gps = "N/A";
     this->address = "N/A";
 }
 
@@ -18,9 +18,18 @@ Location::Location()
  * @param gps
  * @param address
  */
-Location::Location(string bodyOfWater, string gps, string address)
+Location::Location(QString bodyOfWater, QString gps, QString address)
 {
     this->bodyOfWater = bodyOfWater;
     this->gps = gps;
     this->address = address;
+}
+
+/**
+ * returns a QString of the location info
+ * @brief Location::toString
+ * @return
+ */
+QString Location::toString(){
+    return "Body of water type: " + getBodyOfWater() + " | GPS address: " + getGps() + " | Address: " + getAddress();
 }

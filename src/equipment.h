@@ -2,39 +2,40 @@
 #define EQUIPMENT_H
 
 #include <string>
+#include <QString>
 using namespace std;
 
 class Equipment
 {
 private:
     int lineWeight;
-    string lure;
-    string bait;
+    QString lure;
+    QString bait;
 public:
     // constructors
     Equipment();
-    Equipment(int lineWt, string l, string b);
+    Equipment(int lineWt, QString l, QString b);
 
     // methods
-
+    QString toString();
 
     //getters and setters
     int getLineWeight() const {
         return lineWeight;
     };
-    string getLure() const {
+    QString getLure() const {
         return lure;
     };
-    string getBait() const {
+    QString getBait() const {
         return bait;
     };
     void setLineWeight(int lineWeight) {
         this->lineWeight = lineWeight;
     };
-    void setLure(string lure) {
+    void setLure(QString lure) {
       this->lure = lure;
     };
-    void setBait(string bait) {
+    void setBait(QString bait) {
       this->bait = bait;
     };
 };

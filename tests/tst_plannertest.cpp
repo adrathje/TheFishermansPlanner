@@ -27,16 +27,14 @@ plannerTest::~plannerTest()
 
 }
 
+
 void plannerTest::test_case1()
 {
     Fish fish1 = Fish(4, 13, "Bass");
-    Fish fish2 = Fish(10, 3, "Sunny");
-    Fish fish3 = Fish(0, 984, "Blue whale");
-    vector<Fish> fish {fish1, fish2, fish3};
     Planner p = Planner();
-    p.setFishList(fish);
-    int size = p.getFishListSize();
-    QCOMPARE(size, 3);
+    QString bassyFish = fish1.getSpecies();
+    p.setFish(bassyFish);
+    QCOMPARE(p.getFish(), "Bass");
 }
 
 QTEST_APPLESS_MAIN(plannerTest)

@@ -1,10 +1,7 @@
 #ifndef WEATHER_H
 #define WEATHER_H
 
-#include <boat.h>
-#include <fish.h>
-#include <vector>
-#include <string>
+#include <QString>
 using namespace std;
 
 class Weather
@@ -12,17 +9,14 @@ class Weather
 private:
     double temperature;
     double windSpeed;
-    string windDirection = "No Wind";
+    QString windDirection = "No Wind";
 public:
     // constructors
     Weather();
-    Weather(double temp, double windSpd, string windDir);
+    Weather(double temp, double windSpd, QString windDir);
 
     // methods
-    string toString() {
-        //return "Temperature: " << temperature << " Wind Speed: " << getWindSpeed() << " Wind Direction: " << getWindDirection();
-        return to_string(getWindSpeed());
-    };
+    QString toString();
 
     //getters and setters
     double getTemperature() const {
@@ -31,7 +25,7 @@ public:
     double getWindSpeed() const {
         return windSpeed;
     };
-    string getWindDirection() const {
+    QString getWindDirection() const {
         return windDirection;
     };
     void setTemperature(double temperature) {
@@ -40,7 +34,7 @@ public:
     void setWindSpeed(double windSpeed) {
         this->windSpeed = windSpeed;
     };
-    void setSpecies(string windDirection) {
+    void setSpecies(QString windDirection) {
         this->windDirection = windDirection;
     };
 };

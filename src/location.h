@@ -1,37 +1,40 @@
 #ifndef LOCATION_H
 #define LOCATION_H
 
-#include <string>
+#include <QString>
 using namespace std;
 
 class Location
 {
 private:
-    string bodyOfWater;
-    string gps;
-    string address;
+    QString bodyOfWater;
+    QString gps;
+    QString address;
 public:
     // constructors
     Location();
-    Location(string bodyOfWater, string gps, string address);
+    Location(QString bodyOfWater, QString gps, QString address);
+
+    // methods
+    QString toString();
 
     // getters and setters
-    string getBodyOfWater() const {
+    QString getBodyOfWater() const {
         return bodyOfWater;
     };
-    string getGps() const {
+    QString getGps() const {
         return gps;
     };
-    string getAddress() const {
+    QString getAddress() const {
         return address;
     };
-    void setBodyOfWater(string bodyOfWater) {
+    void setBodyOfWater(QString bodyOfWater) {
         this->bodyOfWater = bodyOfWater;
     };
-    void setGps(string gps) {
+    void setGps(QString gps) {
         this->gps = gps;
     };
-    void setAddress(string address) {
+    void setAddress(QString address) {
         this->address = address;
     };
 };
